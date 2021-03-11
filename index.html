@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<style>
+  #main{
+    color:white;
+    background-color: dodgerblue;
+    text-align:center;
+  }
+  .box, #img-div, #tribute-info{
+    background-color:#555;
+    width:auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    object-fit:contain;
+  }
+
+  #tribute-info{
+      display:grid;
+      text-align:center;
+      font-size:18px;
+      padding: 50px 50px 50px 50px;
+      grid-template-areas:
+      "header header header"
+      "content1 content2 content3"
+      "content4 content5 content6";
+      grid-template-columns: repeat(3,1fr);
+  }
+  .section-header{
+      font-size:40px;
+      text-decoration:underline;
+      font-style:italic;
+      padding-bottom:10px;
+      grid-area:header;
+  }
+  #videography{
+    display:grid;
+    padding:50px;
+    grid-column-gap:20px;
+    grid-row-gap:20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 100px;
+    grid-template-areas:
+    "content1 content2 content3 content4"
+    "video video video video"
+    "content5 content6 content7 content8"
+    "video video video video";
+  }
+  .movie,.biocard{
+      display:block;
+    width:20vw;
+    text-align:justify;
+    height:auto;
+  }
+  .biocard{
+      background-color:white;
+      color:black;
+      border-radius:25px;
+      border: 3px solid #555;
+      padding: 10px 10px 10px 10px;
+  }
+  .film_image{
+      border-radius:70%;
+        max-width:100%;
+      max-height:100%;
+  }
+  .movie:hover, .biocard:hover{
+      animation-duration:500ms;
+      animation-name:movie-enlarge;
+      animation-timing-function: ease-out;
+      animation-fill-mode:forwards;
+  }
+  @keyframes movie-enlarge{
+      100%{
+          transform: scale(1.2);
+      }
+  }
+  @keyframes image-enlarge{
+      100%{
+          border-radius:0%;
+      }
+  }
+  .film_image:hover {
+      animation-timing-function:ease-out;
+      animation-duration:500ms;
+      animation-name:image-enlarge;
+      animation-fill-mode:forwards;
+  }
+  h1{
+      padding: 30px;
+      transform:scale(2);
+  }
+  img{
+      align-self:center;
+      max-width:100%;
+      max-height:100%;
+  }
+  #image{
+      max-width:25%;
+      height:auto;
+  }
+
+  #form{
+        background-color:aliceblue;
+        border: 2px solid #333333;
+        border-radius:25px;
+        width:fit-content;
+        padding:25px 25px 25px 25px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        font-size:large;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    
+</style>
+
+<div id="main">
+  <h1 id="title">A Tribute Page for Robin Williams</h1>
+  <div id="img-div">
+    <img id="image" src="https://weluvcelebs.com/wp-content/uploads/2014/12/Robin-Williams-Pic.jpg" >
+    <div id="img-caption">A photo of the American Actor Robin Williams</div>
+  </div>
+    <section id="videography"> <!-- this is where we're putting all the videography items-->
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.trbimg.com%2Fimg-53ea68a4%2Fturbine%2Fos-robin-williams-movies-watch-with-kids&f=1&nofb=1"></div>
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcwtampa.cbslocal.com%2Fwp-content%2Fuploads%2Fsites%2F31326193%2F2014%2F08%2Fgood-will-hunting-poster.jpg&f=1&nofb=1"></div>
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.posterbobs.com%2Fhook.jpg&f=1&nofb=1"></div>
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-_1cajTHHVMQ%2FU-yykomIYEI%2FAAAAAAAAOAg%2FzUuJ-IF-haU%2Fs1600%2F1999%252Bbicentennial%252Bman.jpg&f=1&nofb=1"></div>
+        <div class="movie"><a target="_blank" href="https://www.youtube.com/watch?v=VmRPh1xwab8&ab_channel=WarnerBros." id="tribute-link"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.dvdsreleasedates.com%2Fposters%2F800%2FT%2FThe-World-According-to-Garp-1982-movie-poster.jpg&f=1&nofb=1"></a></div>
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpisces.bbystatic.com%2Fimage2%2FBestBuy_US%2Fimages%2Fproducts%2F6982%2F6982212_so.jpg&f=1&nofb=1"></div>
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic2.tribute.ca%2Fposter%2F540x800%2Fnight-at-the-museum-secret-of-the-tomb-4807.jpg&f=1&nofb=1"></div>
+        <div class="movie"><img class="film_image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.jeded.com%2Fi%2Fone-hour-photo.31313.jpg&f=1&nofb=1"></div>
+    </section>
+    <section id="tribute-info"><!-- this is where we put his biography cards-->
+        <header class="section-header">Biography</header>
+            <div class="biocard" grid-area=content1>
+        Robin McLaurin Williams was born on Saturday, July 21st, 1951, in Chicago, Illinois,
+        a great-great-grandson of Mississippi Governor and Senator, Anselm J. McLaurin. His mother, 
+        Laurie McLaurin (née Janin), was a former model from Mississippi, and his father, Robert Fitzgerald Williams,
+        was a Ford Motor Company executive from Indiana. Williams had English, German, French, Welsh, Irish, and Scottish ancestry.<br><br>
+            </div>
+            <div class="biocard">
+        Robin briefly studied political science at Claremont Men's College and theater at College of Marin before enrolling at The Juilliard School
+        to focus on theater. After leaving Juilliard, he performed in nightclubs where he was discovered for the role of "Mork, from Ork", in an episode 
+        of Happy Days (1974). The episode, Happy Days: My Favorite Orkan (1978), led to his famous spin-off weekly TV series, Mork & Mindy (1978).
+         He made his feature starring debut playing the title role in Popeye (1980), directed by Robert Altman.<br><br>
+        </div>
+        <div class="biocard">
+         Williams' continuous comedies and wild comic talents involved a great deal of improvisation, following in the footsteps of his idol Jonathan Winters. 
+         Williams also proved to be an effective dramatic actor, receiving Academy Award nominations for Best Actor in a Leading Role in Good Morning, Vietnam (1987),
+          Dead Poets Society (1989), and The Fisher King (1991), before winning the Academy Award for Best Actor in a Supporting Role in Good Will Hunting (1997).<br><br>
+        </div>
+        <div class="biocard">                     
+        During the 1990s, Williams became a beloved hero to children the world over for his roles in a string of hit family-oriented films, including Hook (1991),
+        FernGully: The Last Rainforest (1992), Aladdin (1992), Mrs. Doubtfire (1993), Jumanji (1995), Flubber (1997), and Bicentennial Man (1999). He continued entertaining 
+        children and families into the 21st century with his work in Robots (2005), Happy Feet (2006), Night at the Museum (2006), Night at the Museum 2 (2009), 
+        Happy Feet Two (2011), and Night at the Museum: Secret of the Tomb (2014). Other more adult-oriented films for which Williams received acclaim include 
+        The World According to Garp (1982), Moscow on the Hudson (1984), Awakenings (1990), The Birdcage (1996), Insomnia (2002), One Hour Photo (2002), 
+        World's Greatest Dad (2009), and Boulevard (2014).<br><br>
+        </div>
+        <div class="biocard">
+        On Monday, August 11th, 2014, Robin Williams was found dead at his home in Tiburon, California USA, the victim of an apparent suicide, 
+        according to the Marin County Sheriff's Office. A 911 call was received at 11:55 a.m. PDT, firefighters and paramedics arrived at his home at 12:00 p.m. PDT, 
+        and he was pronounced dead at 12:02 p.m. PDT.<br><br>
+        </div>
+    </section>
+</div>
+</div>
+</html>
